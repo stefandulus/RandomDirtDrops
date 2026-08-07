@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "randomdirtdrops",
+	"version": "${version}",
+	"name": "Random Dirt Drops",
+	"description": "Dirt now drops random loot! Configurable mod.",
+	"authors": [
+		"stefandynull"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/randomdirtdrops/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"randomdirtdrops.randomdirtdrops.RandomDirtDrops"
+		],
+		"client": [
+			"randomdirtdrops.randomdirtdrops.client.RandomDirtDropsClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
