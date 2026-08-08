@@ -48,6 +48,7 @@ public final class Configuration {
     private static boolean randomPotions = true;
     private static boolean randomFireworks = true;
     private static boolean randomStews = true;
+    private static boolean randomArrows = true;
 
     private Configuration() {
     }
@@ -129,6 +130,10 @@ public final class Configuration {
                 randomStews = Boolean.parseBoolean(
                         PROPERTIES.getProperty("enableRandomStews", "true")
                 );
+
+                randomArrows = Boolean.parseBoolean(
+                        PROPERTIES.getProperty("enableRandomArrows", "true")
+                );
             }
 
             loadTriggerBlocks();
@@ -164,22 +169,24 @@ public final class Configuration {
         RandomDirtDrops.LOGGER.info("Random Potions: {}", randomPotions);
         RandomDirtDrops.LOGGER.info("Random Fireworks: {}", randomFireworks);
         RandomDirtDrops.LOGGER.info("Random Stews: {}", randomStews);
+        RandomDirtDrops.LOGGER.info("Random Arrows: {}", randomArrows);
     }
 
     private static void createDefaultConfig() throws IOException {
 
         String config = """
-                allBlocksMode=false
+        allBlocksMode=false
 
-                enchantChance=10
-                minEnchantPower=20
-                maxEnchantPower=40
+        enchantChance=10
+        minEnchantPower=20
+        maxEnchantPower=40
 
-                enableRandomBooks=true
-                enableRandomPotions=true
-                enableRandomFireworks=true
-                enableRandomStews=true
-                """;
+        enableRandomBooks=true
+        enableRandomPotions=true
+        enableRandomFireworks=true
+        enableRandomStews=true
+        enableRandomArrows=true
+        """;
 
         Files.writeString(CONFIG_FILE, config);
     }
@@ -258,6 +265,10 @@ enableRandomFireworks
 enableRandomStews
     true  = Suspicious stews receive random effects.
     false = Suspicious stews stay normal.
+    
+enableRandomArrows
+    true  = Tipped arrows receive random potion effects.
+    false = Tipped arrows stay normal.
 
 -----------------------------------------------------------
 blocks.txt
@@ -425,5 +436,9 @@ Duplicate entries are ignored.
 
     public static boolean randomStewsEnabled() {
         return randomStews;
+    }
+
+    public static boolean randomArrowsEnabled() {
+        return randomArrows;
     }
 }

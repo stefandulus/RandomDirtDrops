@@ -26,6 +26,15 @@ public final class RandomItemFactory {
             return PotionGenerator.create(item, world);
         }
 
+        if (item == Items.TIPPED_ARROW) {
+
+            if (!Configuration.randomArrowsEnabled()) {
+                return new ItemStack(item);
+            }
+
+            return TippedArrowGenerator.create(world);
+        }
+
         if (item == Items.SUSPICIOUS_STEW) {
 
             if (!Configuration.randomStewsEnabled()) {

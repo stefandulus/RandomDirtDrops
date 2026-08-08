@@ -8,8 +8,8 @@
 		"stefandynull"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/stefandulus/RandomDirtDrops",
+		"sources": "https://github.com/stefandulus/RandomDirtDrops"
 	},
 	"license": "MIT",
 	"icon": "assets/randomdirtdrops/icon.png",
