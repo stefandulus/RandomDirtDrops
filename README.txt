@@ -11,6 +11,7 @@ A configurable Fabric mod that makes selected blocks drop random items instead o
 - Random enchanted books
 - Random suspicious stews
 - Random fireworks
+- Random tipped arrows
 - Configurable excluded item list
 - Server-side configuration
 - Automatic config generation
