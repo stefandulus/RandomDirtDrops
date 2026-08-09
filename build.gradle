@@ -61,8 +61,10 @@ jar {
 	def projectName = project.name
 	inputs.property "projectName", projectName
 
+	archiveFileName = "randomdirtdrops-${project.mod_version}-mc${project.minecraft_version}.jar"
+
 	from("LICENSE") {
-		rename { "${it}_$projectName"}
+		rename { "${it}_$projectName" }
 	}
 }
 
